@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
+
+/* Theme default CSS */
+body {
+    font-family: "Muli", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Headings with specific colors */
+h1, h2, h3, h4, h5 {
+    font-family: "Muli", sans-serif;
+    color: #001D38; /* Dark blue heading color */
+}
+
+/*First section */
+
+.slider_area {
+    background-image: url('../img/bg-img-1.jpg'); /* Set your banner image */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    padding: 80px 0; /* Adjust the padding */
+    position: relative; /* Ensure positioning for overlay */
+}
+
+/* Optional: Add an overlay for better text visibility */
+.slider_area::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+    z-index: 1; /* Place overlay behind text */
+}
+
+.slider_area h3 {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for h3 */
+    font-size: 54px; /* Increase the font size */
+    font-weight: bold; /* Make it strong */
+    text-align: left; /* Align text to the left */
+    color: white;
+}
+
+.slider_area p {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for paragraph */
+    font-size: 26px; /* Increase the font size */
+    color: white; /* Keep the text color white */
+}
+
+.slider_area h3, .slider_area p {
+    position: relative; /* Position relative to ensure text is above the overlay */
+    z-index: 1; /* Ensure text is above the overlay */
+}
+
+/* Ensure the button is above the overlay */
+.btn-primary {
+    font-family: 'Roboto', sans-serif;
+    position: relative; /* Ensure button is positioned correctly */
+    z-index: 3; /* Ensure button is above the overlay */
+    background-color: #007BFF; /* Default button background color */
+    border: none; /* Remove border */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    color: #fff; /* Keep text color white on hover */
+}
+
+/* 2nd and 3rd section */
+/* Common Card Styles */
+.card {
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack child elements vertically */
+    height: 100%; /* Make the card take full height of its container */
+    position: relative; /* Allow absolute positioning of folded corner */
+}
+
+.card-body {
+    flex: 1; /* Allow the body to grow and fill the available space */
+    display: flex; /* Enable Flexbox in the card body */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Distribute space between elements */
+}
+
+/* Card Title Styles */
+.card-title {
+    font-weight: bold; /* Make the card title bold */
+    font-size: 24px; /* Increase font size for card titles */
+    position: relative; /* Position relative for pseudo-element */
+}
+.card-header{
+  background-color: #fff;
+}
+
+.card-title::after {
+    content: ''; /* Empty content for the line */
+    display: block; /* Make it a block element */
+    width: 50%; /* Set width of the line */
+    height: 3px; /* Thickness of the line */
+    background-color: #007BFF; /* Color of the line */
+    margin: 5px 0 0; /* Align it left by removing auto */
+}
+
+/* Folded Corner Effect */
+.card::after {
+    content: ''; /* Empty content for the fold */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Position at the top */
+    right: 0; /* Position at the right */
+    width: 0; /* No width */
+    height: 0; /* No height */
+    border-top: 20px solid #007BFF; /* Color of the fold */
+    border-left: 20px solid transparent; /* Create the triangle shape */
+    z-index: 2; /* Ensure it's on top of the card */
+}
+
+/* Ensure that Personal Info card does not use Flexbox */
+.personal-info-card .card-body {
+    display: block; /* Use block layout for the Personal Info card */
+}
+
+/* Additional styling for button to keep at the bottom */
+.card .btn {
+    margin-top: auto; /* Push the button to the bottom of the card */
+}
+
+/* Second Section Styles */
+.section {
+    padding: 40px 0; /* Adjust padding for the section */
+}
+
+/* Adjustments for Main Section Title (H2) */
+.container h2 {
+    font-family: 'Roboto', sans-serif; /* Ensure the font family is consistent */
+    font-size: 38px; /* Increase font size for the main title */
+    font-weight: bold; /* Make it strong */
+    color: #001D38; /* Match the primary theme color */
+    text-align: center; /* Center the title */
+    margin-bottom: 40px; /* Add some margin below for spacing */
+}
+
+/* 3rd Section Background Color (kept same as before) */
+.section.bg-light {
+    background-color: #f8f9fa; /* Light background for 3rd section */
+}
+
+/* Card Background Color for 2nd Section */
+.card.bg-light {
+    background-color: #ffffff; /* White background for cards in the 2nd section */
+}
+
+/* Card Background Color for 3rd Section */
+.card {
+    background-color: #ffffff; /* White background for cards in the 3rd section */
+}
+
+
+
+/* Adjust the spacing between sections */
+.mb-65 { margin-bottom: 50px; } /* Reduce spacing */
+.mb-55 { margin-bottom: 40px; } /* Reduce spacing */
+
+/* Button Styles */
+.boxed-btn3 {
+    background: #615CFD;
+    color: #fff;
+    padding: 12px 24px; /* Button padding */
+    font-size: 14px; /* Button font size */
+    border: none;
+}
+
+.boxed-btn3:hover {
+    background: #4d47c3; /* Darker shade on hover */
+    color: white;
+}
+
+/* Portfolio Area */
+.portfolio_area {
+    background-image: url(../img/bg-img-3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Portfolio Images Layout */
+.portfolio_image_area .single_Portfolio {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.portfolio_image_area .single_Portfolio .portfolio_thumb {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio_image_area .single_Portfolio .portfolio_thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover Effect */
+.portfolio_image_area .single_Portfolio .portfolio_hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(97, 92, 253, 0.6);
+    transform: translateY(100%);
+    transition: 0.5s ease;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Set z-index for the hover effect */
+}
+
+.portfolio_image_area .single_Portfolio:hover .portfolio_hover {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.portfolio_image_area .single_Portfolio .portfolio_hover h3 {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Ensure the <a> tag is clickable */
+.single_Portfolio a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Higher than the hover effect */
+}
+
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+    .modal-body .col-2 {
+        flex: 0 0 20%; /* 5 images per row */
+        max-width: 20%;
+    }
+}
+
+/* Adjust for small screens (1 or 2 images per row) */
+@media (max-width: 767px) {
+    .modal-body .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .modal-body .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Center images inside their columns */
+.modal-body .col-2 img {
+    display: block;
+    margin: 0 auto; /* Horizontally center the image */
+}
+
+
+/* Freelance Section (5th Section): Adjust the form and personal details */
+.discuss_projects {
+    position: relative; /* Set position relative to hold absolute children */
+    padding: 40px 0; /* Add padding for top and bottom */
+}
+
+.map-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Behind content */
+}
+
+.container {
+    position: relative;
+    z-index: 2; /* Above the map */
+}
+
+.personal-details {
+    color: black; /* Text color */
+}
+
+/* Style for the white boxes */
+.message-section, .personal-details {
+    background-color: white; /* White background */
+    padding: 20px; /* Padding inside the boxes */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+
+.discuss_projects .form-group input,
+.discuss_projects .form-group textarea {
+    width: 100%;
+    max-width: 100%; /* Ensure the form doesn't stretch */
+}
+
+/* Adjust layout to make form and personal details side by side */
+.discuss_projects .row > div {
+    margin-bottom: 20px; /* Add some space between the two columns */
+}
+
+/* Footer Section: Adjust Spacing */
+.footer {
+    background-color: #001D38; /* Dark background */
+    color: white; /* Text color */
+    padding: 40px 0; /* Padding for top and bottom */
+}
+
+.footer_top h5 {
+    font-size: 18px; /* Increase font size for section titles */
+    margin-bottom: 15px; /* Space below titles */
+}
+
+.footer a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.copy-right_text {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional top border */
+    padding-top: 10px; /* Add some padding */
+}
+
+.footer_border {
+    margin: 10px 0; /* Space for footer border */
+}
