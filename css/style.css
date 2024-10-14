@@ -20,6 +20,41 @@ h1, h2, h3, h4, h5 {
     color: #001D38; /* Dark blue heading color */
 }
 
+/*Navigation bar*/
+
+/* Brand image styling */
+.brand-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Hide the brand title and subtitle initially */
+.brand-txt {
+    display: none;
+}
+
+/* Sticky Navbar effect: Profile image changes to name */
+.navbar.scrolled .brand-img {
+    display: none; /* Hide the profile image when scrolled */
+}
+
+.navbar.scrolled .brand-txt {
+    display: block; /* Show the name and subtitle when scrolled */
+}
+
+.navbar.scrolled {
+    background-color: #000; /* Change navbar background on scroll (optional) */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link.active {
+    color: #000; /* Color to highlight active link */
+    font-weight: bold; /* Optional: make it bold */
+}
+
+
 /*First section */
 
 .slider_area {
@@ -186,99 +221,97 @@ h1, h2, h3, h4, h5 {
 
 /* Portfolio Area */
 .portfolio_area {
-    background-image: url(../img/bg-img-3.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    padding-top: 60px;
-    padding-bottom: 60px;
+  background-image: url(../img/bg-img-3.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 360px;
 }
 
-/* Portfolio Images Layout */
-.portfolio_image_area .single_Portfolio {
+.portfolio_area:before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #001D38;
+  content: '';
+}
+
+.portfolio_area h2, span{
+  color: #fff;
+}
+
+/* Adjust for mobile */
+@media (max-width: 767px) {
+    .portfolio_area {
+        padding-top: 60px;
+    }
+}
+
+/* Portfolio Images Area */
+.portfolio_image_area {
+    padding-bottom: 75px;
+    position: relative;
+    margin-top: -295px; /* Overlap the first row with title section */
+}
+
+/* Portfolio Item Styling */
+.single_Portfolio {
     position: relative;
     margin-bottom: 20px;
     overflow: hidden;
 }
 
-.portfolio_image_area .single_Portfolio .portfolio_thumb {
-    height: 300px;
-    width: 100%;
-    overflow: hidden;
+.single_Portfolio .portfolio_thumb {
+    height: 410px; /* Adjust height of images */
 }
 
-.portfolio_image_area .single_Portfolio .portfolio_thumb img {
+.single_Portfolio .portfolio_thumb img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure images cover the div without stretching */
 }
 
 /* Hover Effect */
-.portfolio_image_area .single_Portfolio .portfolio_hover {
+.single_Portfolio .portfolio_hover {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(97, 92, 253, 0.6);
-    transform: translateY(100%);
-    transition: 0.5s ease;
+    text-align: center;
+    background: rgba(97, 92, 253, 0.6); /* Semi-transparent overlay */
+    transform: translateX(-50%);
+    transition: 0.5s;
     opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1; /* Set z-index for the hover effect */
 }
 
-.portfolio_image_area .single_Portfolio:hover .portfolio_hover {
-    transform: translateY(0%);
-    opacity: 1;
+.single_Portfolio:hover .portfolio_hover {
+    transform: translateX(0%);
+    opacity: 1; /* Show the overlay and text on hover */
 }
 
-.portfolio_image_area .single_Portfolio .portfolio_hover h3 {
-    color: #fff;
-    font-size: 20px;
-    text-align: center;
-}
-
-/* Ensure the <a> tag is clickable */
-.single_Portfolio a {
+.single_Portfolio .portfolio_hover .title {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2; /* Higher than the hover effect */
+    right: 0;
+    text-align: center;
+    transform: translateY(-50%);
 }
 
-
-/* Adjust for larger screens */
-@media (min-width: 768px) {
-    .modal-body .col-2 {
-        flex: 0 0 20%; /* 5 images per row */
-        max-width: 20%;
-    }
+.single_Portfolio .portfolio_hover h3 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
 }
 
-/* Adjust for small screens (1 or 2 images per row) */
-@media (max-width: 767px) {
-    .modal-body .col-6 {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-
-    .modal-body .col-12 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-
-/* Center images inside their columns */
-.modal-body .col-2 img {
-    display: block;
-    margin: 0 auto; /* Horizontally center the image */
-}
 
 
 /* Freelance Section (5th Section): Adjust the form and personal details */
@@ -327,30 +360,49 @@ h1, h2, h3, h4, h5 {
 
 /* Footer Section: Adjust Spacing */
 .footer {
-    background-color: #001D38; /* Dark background */
-    color: white; /* Text color */
-    padding: 40px 0; /* Padding for top and bottom */
+    background-color: #001D38; /* Set the background color */
+    color: #ffffff; /* Ensure the text color is white for better readability */
+    padding: 60px 0;
 }
 
-.footer_top h5 {
-    font-size: 18px; /* Increase font size for section titles */
-    margin-bottom: 15px; /* Space below titles */
+.footer_top {
+    padding-bottom: 20px;
 }
 
-.footer a {
-    color: white; /* Link color */
-    text-decoration: none; /* Remove underline */
+.footer .menu_links ul li a {
+    color: #ffffff; /* Ensure the links are white */
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
 }
 
-.footer a:hover {
-    text-decoration: underline; /* Underline on hover */
+.footer .menu_links ul li a:hover {
+    color: #f1c40f; /* Optional: Change hover color for links */
+}
+
+.footer .socail_links ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer .socail_links ul li a:hover {
+    color: #f1c40f; /* Optional: Change hover color for social icons */
 }
 
 .copy-right_text {
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Optional top border */
-    padding-top: 10px; /* Add some padding */
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Add border for separation */
+    padding-top: 20px;
+    margin-top: 20px;
 }
 
-.footer_border {
-    margin: 10px 0; /* Space for footer border */
+.copy-right_text p {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
 }
+
